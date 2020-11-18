@@ -21,10 +21,10 @@ def make_soup(url):
     return soup
 
 # Create a list containing a dictionary, card_dict, for each each of the 11 article cards on the main blog page.
-def get_card_info(card):
+def get_readme_info(readme):
     '''
-    This function gets summary info from each card on the main page at https://ryanorsinger.com
-    returning a card dictionary with title, content, relative url, and read time
+    This function gets info from each readme on the github page https://github.com/search?o=desc&q=environmental&s=&type=Repositories
+    returning a readme dictionary with XX, XX, XX, and read time
     '''
     # get these items from the card
     title = card.find('h2').text
