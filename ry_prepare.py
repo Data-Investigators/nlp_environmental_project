@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 
 import pandas as pd
 
-import acquire
+import acquire_ry
 
 
 
