@@ -132,7 +132,7 @@ def prep_data(df, column, extra_words=[], exclude_words=[]):
     # add column with number of words in readme content
     df['doc_length'] = [len(wordlist) for wordlist in df.words]
     
-    # remove languages with 3 or less occurrences in the dataset
-    language_list = ['JavaScript', 'Java', 'HTML', 'Python', 'C#', 'C++', 'Jupyter Notebook', 'R', 'Ruby', 'C', 'CSS', 'MATLAB', 'TeX', 'PHP']
+    # removing unpopular languages 
+    language_list = ['JavaScript', 'Java', 'HTML', 'Python']
     df = df[df.language.isin(language_list)]
     return df
