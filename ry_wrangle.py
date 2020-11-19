@@ -6,8 +6,8 @@ import os
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import MinMaxScaler
-import acquire
-import prepare
+import acquire_ry
+import ry_prepare
 
 import sklearn
 
