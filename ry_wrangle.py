@@ -95,7 +95,7 @@ def add_scaled_columns(X_train, X_validate, X_test, scaler, columns_to_scale):
 ##### for GitHub project
 def wrangle_github(cached=True):
     print('acquiring data')
-    df = acquire_ry.get_github(cached)
+    df = acquire_ry.get_github2(cached)
     print('preparing data')
     df = ry_prepare.prep_data(df, 'content', extra_words=[], exclude_words=[])
     print('splitting data')
