@@ -92,3 +92,14 @@ def add_scaled_columns(X_train, X_validate, X_test, scaler, columns_to_scale):
     return X_train_scaled, X_validate_scaled, X_test_scaled
 
 
+##### for GitHub project
+def wrangle_github(cached=True):
+    print('acquiring data')
+    df = acquire_ry.get_github(cached)
+    print('preparing data')
+    df = ry_prepare.prep_data(df, 'content', extra_words=[], exclude_words=[])
+    print('splitting data')
+    train_exp, X_train, y_train, X_validate, y_validate, X_test, y_test = split(df, 'language')
+    print('complete')
+    print('X-train shape', X_train.shape, 'X_validate shape', X_validate.shape, 'X_test shape', X_test.shape)
+    return  train_exp, X_train, y_train, X_validate, y_validate, X_test, y_test
