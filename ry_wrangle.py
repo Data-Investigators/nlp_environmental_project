@@ -97,7 +97,7 @@ def wrangle_github(cached=True):
     print('acquiring data')
     df = acquire_ry.get_github2(cached)
     print('preparing data')
-    df = ry_prepare.prep_data(df, 'content', extra_words=[], exclude_words=[])
+    df = ry_prepare.prep_data(df, 'content', extra_words=['file', 'environmental', 'data'], exclude_words=[])
     print('splitting data')
     train_exp, X_train, y_train, X_validate, y_validate, X_test, y_test = split(df, 'language')
     print('complete')
