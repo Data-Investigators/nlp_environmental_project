@@ -23,7 +23,7 @@ This model increased the prediction accuracy from a baseline of 35% to an averag
 **Possible Next Steps**
 The current clean and prepare methods eliminate text symbols not in english as noise.
 Would recommend either obtaining new dataset of only english repos or otherwise adjusting for non-english text.
-Could also use a larger dataset. Once filtered for only the top 4 languages our dataset went from over 800 observations to 400.
+Utilized identified unique words by language as features for modeling.
 
 
 ## Project Organization
