@@ -12,32 +12,6 @@ import ry_prepare
 import sklearn
 
 
-######## Add features ######
-def create_features(df):
-    '''
-    creates new features for exploration and possibly modeling
-    '''
-    df['age'] = 2017 - df.yearbuilt
-
-    # create taxrate variable
-    df['taxrate'] = df.taxamount/df.taxvaluedollarcnt
-        
-    # dollar per square foot-structure
-    df['structure_dollar_per_sqft'] = df.structuretaxvaluedollarcnt/df.calculatedfinishedsquarefeet
-
-    # dollar per square foot-land
-    df['land_dollar_per_sqft'] = df.landtaxvaluedollarcnt/df.lotsizesquarefeet
-    
-    # ratio of beds to baths
-    df['bed_bath_ratio'] = df.bedroomcnt/df.bathroomcnt
-
-    return df
-
-def remove_outliers(df):
-    '''
-    remove outliers in tax rate and calculated finished sqft
-    '''
-    return df[((df.taxrate > .01) & (df.taxrate < .066) & (df.calculatedfinishedsquarefeet < 7000) & (df.lotsizesquarefeet < 2000000))]
 
 ####### Split dataframe ########
 def split(df, target_var):
@@ -68,28 +42,6 @@ def split(df, target_var):
     train_exp = train.copy()
     return train_exp, X_train, y_train, X_validate, y_validate, X_test, y_test
 
-
-######## Scale #########
-
-def add_scaled_columns(X_train, X_validate, X_test, scaler, columns_to_scale):
-    """This function takes the inputs from scale_zillow and scales the data"""
-    new_column_names = [c + '_scaled' for c in columns_to_scale]
-    scaler.fit(X_train[columns_to_scale])
-
-    X_train_scaled = pd.concat([
-        X_train,
-        pd.DataFrame(scaler.transform(X_train[columns_to_scale]), columns=new_column_names, index=X_train.index),
-    ], axis=1)
-    X_validate_scaled = pd.concat([
-        X_validate,
-        pd.DataFrame(scaler.transform(X_validate[columns_to_scale]), columns=new_column_names, index=X_validate.index),
-    ], axis=1)
-    X_test_scaled = pd.concat([
-        X_test,
-        pd.DataFrame(scaler.transform(X_test[columns_to_scale]), columns=new_column_names, index=X_test.index),
-    ], axis=1)
-    
-    return X_train_scaled, X_validate_scaled, X_test_scaled
 
 
 ##### for GitHub project
