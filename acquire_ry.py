@@ -104,9 +104,9 @@ def github_urls():
     # flatten the urls list
     urls = [y for x in urls for y in x]
     return urls
-# this produces a flattened list of lists = 270 urls
+# this produces a flattened list of lists
 
-###### from Corey
+###### from Corey - NOT USED #######
 def get_urls_list():
     '''
     This function collects Github repos when given a URL search page
@@ -276,7 +276,7 @@ def get_github2(cached=False):
         df.to_json('readmes2.json')
 
     return df
-
+    # this returns a dataframe with 827 observations for cleaning
 
 
 def get_github_86results(cached=False):
