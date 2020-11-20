@@ -1,17 +1,16 @@
-# GitHub Repo language prediction Project
+# GitHub Repo Language Prediction Project
 
 ### Author: Ryvyn Young & George Arredondo
 
 ## Description: 
-- For this project, you will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
+Can the primary programming language of the repository be determine through Natural Language Processing analysis of the readme text?
+Scrape GitHub repos and collect a minimum 100 sample dataset to use for analysis.
+Using NLP clean and prepare the data, then Explore and build a model using ML algorithms to predict the language of the repo.
 
 ## Instructions for Replication
-
-## Research:
-- What is base url?
-- Get anchor url from topics search?
-- HTML tag for readme text?
-- HTML tag for language?
+Python scripts contain functions for Acquiring, Preparing, and Wrangling the data.
+The Jupyter Notebook contains all Exploration and Modeling information.
+Modeling functions are located in the model.py file
 
 ## Key Findings
 
@@ -25,16 +24,13 @@
 
 ## Project Organization
 ```
- Project [repo](XXXXXXXX)
-├── README.md               <- The top-level README for developers using this project.
+ Project [repo](https://github.com/Data-Investigators/nlp_environmental_project)
+├── README.md       <- The top-level README for developers using this project.
 │
-├── acquire.py              <- The script to download or generate data
-├── prepare.py              <- The script for preparing the raw data
-├── summarize.py            <- The script for summarizing the raw data
-├── wrangle_zillow.py       <- The script for running the acquire and prepare functions
-│                              then splitting and scaling the data
+├── acquire.py      <- The script to generate data
+├── prepare.py      <- The script for preparing the raw data
+├── wrangle.py              <- The script for running the acquire and prepare functions, then splitting the data
 ├── explore.py              <- The script to produce visualizations for the notebook
-│                              then splitting and scaling the data
 ├── model.py                <- The script to produce models and return results to the notebook
 │
 ├── mvp.ipynb               <- The draft notebook for the project
@@ -43,42 +39,44 @@
 ```
 
 ## Data Dictionary
-see data_dictionary.md
+| Field Name  | Data in field                       | Data Type |
+|-------------|-------------------------------------|-----------|
+| language    | text, programing language           | category  |
+| content     | text, original scraped text         | object    |
+| clean       | text, original text cleaned         | object    |
+| stemmed     | cleaned and stemmed text            | object    |
+| lemmatized  | cleaned and lemmatized text         | object    |
+| words       | list of words in readme             | object    |
+| doc_length  | count of words in readme            | int64     |
+
 
 *****
 ## Planning Stage
-Project Description: 
-- For this project, you will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
+**Project Description:**
+For this project, you will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
 
-
-GOALS:
+**GOALS:**
 Can we predict what language is being used based on the README.md documentation
 
-
-MVP Questions to answer:
-- initial dataset is repos on first page of https://github.com/search?o=desc&p=1&q=environmental&s=updated&type=Repositories
-- get anchor url for each result 
-- 
-
-
-## Acquire Stage
-
-
-## Preparation Stage
-
-
-
-
-## Exploration and Pre-Processing Stage
+**MVP Questions to answer:**
+- Where will the data come from?
+    - GitHub repos with 'environmental' in search, sorted by Best Match
+- What languages will we focus on?
+    - Top 4 in dataset = Python, JavaScript, HTML, Java
+- Are there words that need to be removed to reduce noise?
+    - Yes, 'file', 'data', and 'environmental' occur in the top 5 words for all languages, these have been filtered out
+    - Remaining duplicated word = 'sensor' in Top 5 of Python and JavaScript only
+Is the dataset balanced?
+    - Yes, the proportions represented range from 17%-35%
+- Is there a significant difference in the mean length of the readme from the overall mean by language?
+    - Only for HTML, there is not a significant difference for the other 3 languages
+- Visualize the proportion of the Top 20 words in the dataset by language
+- Build a predictive Model to determine the language of the repo from the readme text
 
 
-
-## Modeling Stage
-
-
-## Delivery Stage
+## Delivery
 - Jupyter notebook that contains your analysis
-- One or two google slides suitable for a general audience that summarize your findings. Include a well-labelled visualization in your slides.
+- One or two google slides suitable for a general audience that summarize your findings
 - 5 min presentation
 
 
