@@ -17,25 +17,29 @@ Modeling functions are located in the model.py file
 
 
 **Best Performing Model**
+Our best performing model uses a Random Forest algorithm and TF-IDF to vectroize the text.
+This model increased the prediction accuracy from a baseline of 35% to an average of 78% on unseen data.
 
 **Possible Next Steps**
-
+The current clean and prepare methods eliminate text symbols not in english as noise.
+Would recommend either obtaining new dataset of only english repos or otherwise adjusting for non-english text.
+Could also use a larger dataset. Once filtered for only the top 4 languages our dataset went from over 800 observations to 400.
 
 
 ## Project Organization
 ```
  Project [repo](https://github.com/Data-Investigators/nlp_environmental_project)
-├── README.md       <- The top-level README for developers using this project.
+├── README.md     <- The top-level README for developers using this project.
 │
-├── acquire.py      <- The script to generate data
-├── prepare.py      <- The script for preparing the raw data
-├── wrangle.py              <- The script for running the acquire and prepare functions, then splitting the data
-├── explore.py              <- The script to produce visualizations for the notebook
-├── model.py                <- The script to produce models and return results to the notebook
+├── acquire.py    <- The script to generate data
+├── prepare.py    <- The script for preparing the raw data
+├── wrangle.py    <- The script for running the acquire and prepare functions, then splitting the data
+├── explore.py    <- The script to produce visualizations for the notebook
+├── model.py      <- The script to produce models and return results to the notebook
 │
-├── mvp.ipynb               <- The draft notebook for the project
+├── mvp.ipynb     <- The draft notebook for the project
 │
-├── Final.ipynb             <- The finished notebook for presentation of the project
+├── Final.ipynb   <- The finished notebook for presentation of the project
 ```
 
 ## Data Dictionary
@@ -51,14 +55,13 @@ Modeling functions are located in the model.py file
 
 
 *****
-## Planning Stage
-**Project Description:**
+## Project Description:
 For this project, you will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
 
-**GOALS:**
+## GOALS:
 Can we predict what language is being used based on the README.md documentation
 
-**MVP Questions to answer:**
+## MVP Questions to answer:
 - Where will the data come from?
     - GitHub repos with 'environmental' in search, sorted by Best Match
 - What languages will we focus on?
@@ -72,7 +75,6 @@ Is the dataset balanced?
     - Only for HTML, there is not a significant difference for the other 3 languages
 - Visualize the proportion of the Top 20 words in the dataset by language
 - Build a predictive Model to determine the language of the repo from the readme text
-
 
 ## Delivery
 - Jupyter notebook that contains your analysis
