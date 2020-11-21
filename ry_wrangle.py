@@ -46,6 +46,9 @@ def split(df, target_var):
 
 ##### for GitHub project
 def wrangle_github(cached=True):
+    '''
+    runs all functions to acquire, prepare, and split data
+    '''
     print('acquiring data')
     df = acquire_ry.get_github2(cached)
     print('preparing data')

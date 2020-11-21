@@ -79,6 +79,10 @@ def decesion_tree(X_train, y_train, X_bow, X_tfidf, k):
     ######################## Random Forest ##########################
 
 def random_forest(X_train, y_train, X_bow, X_tfidf, k):
+    '''
+    This function takes in X_train (features using for model) and y_train (target) and performs random
+    forest giving us accuracy of the model and the classification report
+    '''
     # Random forest object
     rf = RandomForestClassifier(n_estimators=500, max_depth=k, random_state=123)
 
@@ -109,6 +113,10 @@ def random_forest(X_train, y_train, X_bow, X_tfidf, k):
     ######################## KNN ##########################
 
 def knn(X_train, y_train, X_bow, X_tfidf, k):
+    '''
+    This function takes in X_train (features using for model) and y_train (target) and performs 
+     K nearest neighbors giving us accuracy of the model and the classification report
+    '''
     # KNN object
     knn = KNeighborsClassifier(n_neighbors=k, weights='uniform')
 
@@ -139,7 +147,10 @@ def knn(X_train, y_train, X_bow, X_tfidf, k):
     ######################## Complement Naive Bayes ##########################
 
 def complement_naive_bayes(X_train, y_train, X_tfidf):
-    
+    '''
+    This function takes in X_train (features using for model) and y_train (target) and performs 
+    complement Naive Bayes giving us accuracy of the model and the classification report
+    '''    
     # Call function and fit
     cnb = ComplementNB().fit(X_tfidf, y_train)
     
@@ -156,7 +167,10 @@ def complement_naive_bayes(X_train, y_train, X_tfidf):
     ######################## Multinomial Naive Bayes ##########################
 
 def multinomial_naive_bayes(X_train, y_train, X_tfidf):
-    
+    '''
+    This function takes in X_train (features using for model) and y_train (target) and performs 
+    multinomial naive bayes giving us accuracy of the model and the classification report
+    '''    
     # Call function and fit
     mnb = MultinomialNB().fit(X_tfidf, y_train)
     
@@ -204,7 +218,10 @@ def validate_logistic_regression(X_validate, y_validate, V_bow, V_tfidf, lm_bow,
     ######################## Validate Random Forest ##########################
 
 def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf_tfidf):
-    
+   '''
+    This function takes in X_train (features using for model) and y_train (target) and performs random
+    forest giving us accuracy of the model and the classification report
+    '''    
     # Array of the predicitons
     X_validate['predicted'] = rf_bow.predict(V_bow)
 
@@ -229,7 +246,10 @@ def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf
 ######################## Validate Complement Naive Bayes ##########################
 
 def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
-    
+   '''
+    This function takes in X_train (features using for model) and y_train (target) and performs 
+    complement Naive Bayes giving us accuracy of the model and the classification report
+    '''       
     # Array of the predicitons
     X_validate['pred_tfidf'] = cnb_tfidf.predict(V_tfidf)
 
@@ -243,7 +263,10 @@ def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
     ######################## Test Random Forest ##########################
 
 def test_random_forest(X_test, y_test, T_tfidf, k, rf_tfidf):
-    
+   '''
+    This function takes in X_train (features using for model) and y_train (target) and performs random
+    forest giving us accuracy of the model and the classification report
+    '''      
     # Array of the predicitons
     X_test['pred_tfidf'] = rf_tfidf.predict(T_tfidf)
 
@@ -257,7 +280,10 @@ def test_random_forest(X_test, y_test, T_tfidf, k, rf_tfidf):
 
 
 def test_logistic_regression(X_test, y_test, T_bow, T_tfidf, lm_bow, lm_tfidf):
-    
+    '''
+    This function takes in X_train (features using for model) and y_train (target) and performs logistic
+    regression giving us accuracy of the model and the classification report
+    '''   
     # Array of the predicitons
     X_test['predicted'] = lm_bow.predict(T_bow)
 
