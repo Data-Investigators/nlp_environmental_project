@@ -262,3 +262,30 @@ def test_random_forest(X_test, y_test, T_tfidf, k):
     print(f'TF-IDF Confusion Matrix: \n\n {pd.crosstab(y_test.language, X_test.pred_tfidf)}\n' )
     print('-----------------------')
     print("TF-IDF Random Forest Classification Report:\n", classification_report(y_test.language, X_test.pred_tfidf))
+
+
+
+def test_logistic_regression(X_test, y_test, T_bow, T_tfidf):
+    # Calling out funtion
+    lm = LogisticRegression().fit(T_bow, y_test)
+
+    # Array of the predicitons
+    X_test['predicted'] = lm.predict(T_bow)
+
+     # X_bow
+    print('X_bow Accuracy: {:.0%}\n'.format(accuracy_score(y_test, X_test.predicted)))
+    print('-----------------------')
+    print(f'X_bow Confusion Matrix: \n\n {pd.crosstab(y_test.language, X_test.predicted)}\n' )
+    print('-----------------------')
+    print("X_bow Logistic Regression Classification Report:\n", classification_report(y_test, X_test.predicted))
+    
+    lm_tfidf = lm.fit(T_tfidf, y_test)
+    X_test['pred_tfidf'] = lm_tfidf.predict(T_tfidf)
+
+    # TF-IDF
+    print('-----------------------')
+    print('TF-IDF Accuracy: {:.0%}\n'.format(accuracy_score(y_test, X_test.pred_tfidf)))
+    print('-----------------------')
+    print(f'TF-IDF Confusion Matrix: \n\n {pd.crosstab(y_test.language, X_test.pred_tfidf)}\n' )
+    print('-----------------------')
+    print("TF-IDF Logistic Regression Classification Report:\n", classification_report(y_test, X_test.pred_tfidf))
