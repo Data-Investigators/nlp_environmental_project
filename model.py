@@ -204,12 +204,7 @@ def validate_logistic_regression(X_validate, y_validate, V_bow, V_tfidf, lm_bow,
     ######################## Validate Random Forest ##########################
 
 def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf_tfidf):
-    # Random forest object
-    #rf = RandomForestClassifier(n_estimators=100, max_depth=k, random_state=123)
-
-    # Fitting the data to the trained data
-    #rf.fit(V_bow, y_validate)
-
+    
     # Array of the predicitons
     X_validate['predicted'] = rf_bow.predict(V_bow)
 
@@ -235,10 +230,7 @@ def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf
 
 def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
     
-    # Call function and fit
-    #cnb = ComplementNB().fit(V_tfidf, y_validate)
-    
-    #cnb_tfidf = cnb.fit(V_tfidf, y_validate)
+    # Array of the predicitons
     X_validate['pred_tfidf'] = cnb_tfidf.predict(V_tfidf)
 
     # TF-IDF
@@ -251,10 +243,8 @@ def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
     ######################## Test Random Forest ##########################
 
 def test_random_forest(X_test, y_test, T_tfidf, k, rf_tfidf):
-    # Random forest object
-    #rf = RandomForestClassifier(n_estimators=100, max_depth=k, random_state=123)
-
-    #rf_tfidf = rf.fit(T_tfidf, y_test)
+    
+    # Array of the predicitons
     X_test['pred_tfidf'] = rf_tfidf.predict(T_tfidf)
 
    # Confusion matrix
@@ -267,9 +257,7 @@ def test_random_forest(X_test, y_test, T_tfidf, k, rf_tfidf):
 
 
 def test_logistic_regression(X_test, y_test, T_bow, T_tfidf, lm_bow, lm_tfidf):
-    # Calling out funtion
-    #lm = LogisticRegression().fit(T_bow, y_test)
-
+    
     # Array of the predicitons
     X_test['predicted'] = lm_bow.predict(T_bow)
 
