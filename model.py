@@ -218,7 +218,7 @@ def validate_logistic_regression(X_validate, y_validate, V_bow, V_tfidf, lm_bow,
     ######################## Validate Random Forest ##########################
 
 def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf_tfidf):
-   '''
+    '''
     This function takes in X_train (features using for model) and y_train (target) and performs random
     forest giving us accuracy of the model and the classification report
     '''    
@@ -235,7 +235,7 @@ def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf
     #rf_tfidf = rf.fit(V_tfidf, y_validate)
     X_validate['pred_tfidf'] = rf_tfidf.predict(V_tfidf)
 
-   # Confusion matrix
+    # Confusion matrix
     print('-----------------------')
     print('TF-IDF Accuracy: {:.0%}\n'.format(accuracy_score(y_validate.language, X_validate.pred_tfidf)))
     print('-----------------------')
@@ -246,7 +246,7 @@ def validate_random_forest(X_validate, y_validate, V_bow, V_tfidf, k, rf_bow, rf
 ######################## Validate Complement Naive Bayes ##########################
 
 def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
-   '''
+    '''
     This function takes in X_train (features using for model) and y_train (target) and performs 
     complement Naive Bayes giving us accuracy of the model and the classification report
     '''       
@@ -263,7 +263,7 @@ def validate_complement_naive_bayes(X_validate, y_validate, V_tfidf, cnb_tfidf):
     ######################## Test Random Forest ##########################
 
 def test_random_forest(X_test, y_test, T_tfidf, k, rf_tfidf):
-   '''
+    '''
     This function takes in X_train (features using for model) and y_train (target) and performs random
     forest giving us accuracy of the model and the classification report
     '''      
