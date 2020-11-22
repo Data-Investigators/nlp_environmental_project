@@ -19,10 +19,12 @@ Our top three models performed well on the train dataset, however, when used on 
 
 
 **Best Performing Model**
+
 Our best performing model uses a Logistic Regression algorithm and TF-IDF to vectroize the text.
 This model increased the prediction accuracy from a baseline of 35% to an average of 47% on unseen data.
 
 **Possible Next Steps**
+
 The current clean and prepare methods eliminate text symbols not in English as noise. Would recommend either obtaining new dataset of only English repos or otherwise adjusting for non-English text as our basic clean did remove a lot of non english words. We identified lists of specific words that were unique to each language, but were unable to incorporate those lists into features. Increasing the size of the dataset may help improve future models. Also, we may oversample the least occuring languages to have a more evenly distributed data set or reduce the most common language. 
 
 
@@ -77,8 +79,8 @@ Is the dataset balanced?
 - Build a predictive Model to determine the language of the repo from the readme text
 
 ## Delivery
-- Jupyter notebook that contains your analysis
-- One or two google slides suitable for a general audience that summarize your findings
+- [Final jupyter notebook](https://github.com/Data-Investigators/nlp_environmental_project/blob/main/final.ipynb)
+- [Presentation link](https://www.canva.com/design/DAEOE5_hL1s/adKdEZGzPFm_Z94PxebDxA/view?utm_content=DAEOE5_hL1s&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 - 5 min presentation
 
 
