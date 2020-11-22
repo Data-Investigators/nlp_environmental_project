@@ -13,9 +13,7 @@ The Jupyter Notebook contains all Exploration and Modeling information.
 Modeling functions are located in the model.py file
 
 ## Key Findings
-The initial models performed well on the train dataset, however, when used on unseen data the accuracy was significantly reduced.
-This indicates that the models are overfit. Increasing the size of the dataset may help improve future models.
-We identified lists of specific words that were unique to each language, but were unable to incorporate those lists into features.
+Our top three models performed well on the train dataset, however, when used on unseen data the accuracy was significantly reduced. The reduction of our data set of the 4 most popular languages could of played a role in the reduction of our accuracy, as the validate and test distribution could of been unevenly distributed.
 
 
 **Best Performing Model**
@@ -23,9 +21,7 @@ Our best performing model uses a Logistic Regression algorithm and TF-IDF to vec
 This model increased the prediction accuracy from a baseline of 35% to an average of 47% on unseen data.
 
 **Possible Next Steps**
-The current clean and prepare methods eliminate text symbols not in English as noise.
-Would recommend either obtaining new dataset of only English repos or otherwise adjusting for non-English text.
-Utilized identified unique words by language as features for modeling.
+The current clean and prepare methods eliminate text symbols not in English as noise. Would recommend either obtaining new dataset of only English repos or otherwise adjusting for non-English text as our basic clean did remove a lot of non english words. We identified lists of specific words that were unique to each language, but were unable to incorporate those lists into features. Increasing the size of the dataset may help improve future models. Also, we may oversample the least occuring languages to have a more evenly distributed data set or reduce the most common language. 
 
 
 ## Project Organization
@@ -39,7 +35,7 @@ Utilized identified unique words by language as features for modeling.
 ├── explore.py    <- The script to produce visualizations for the notebook
 ├── model.py      <- The script to produce models and return results to the notebook
 │
-├── mvp.ipynb     <- The draft notebook for the project
+├── drafts folder     <- Contains all work done leading up to final.ipynb
 │
 ├── final.ipynb   <- The finished notebook for presentation of the project
 ```
