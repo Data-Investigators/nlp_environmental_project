@@ -88,7 +88,7 @@ def word_counts_proportion(word_counts):
 
 def proportion_visualization(word_counts):
     '''
-    creates a plot that shows the proportion of the top 20 words by language
+    creates a plot that shows the distribution of the top 20 words by language
     '''
     ## visualize the % of the term in each language
     plt.figure(figsize=(12,8))
@@ -105,7 +105,9 @@ def proportion_visualization(word_counts):
     .plot.barh(stacked=True))
 
     plt.legend(bbox_to_anchor=(1.05, 1))
-    plt.title('Proportion of language for the 20 most common words')
+    plt.title('Distribution of languages for the 20 most common words')
+    plt.xlabel('Distribution')
+    plt.ylabel('Words')
     plt.show()
 
 
