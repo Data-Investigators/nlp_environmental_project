@@ -1,4 +1,4 @@
-<img width="388" alt="question2" src="https://user-images.githubusercontent.com/62911364/99906756-6d970200-2c9e-11eb-90c8-142bda403093.png">
+![20476859-a-magnifying-glass-over-a-selection-of-words](https://user-images.githubusercontent.com/62911364/99906826-d8483d80-2c9e-11eb-8a0f-bba1728b5596.jpg)
 
 # GitHub Repo Language Prediction Project
 
