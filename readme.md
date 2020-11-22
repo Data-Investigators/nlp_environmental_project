@@ -81,6 +81,3 @@ Is the dataset balanced?
 ## Delivery
 - [Final jupyter notebook](https://github.com/Data-Investigators/nlp_environmental_project/blob/main/final.ipynb)
 - [Presentation link](https://www.canva.com/design/DAEOE5_hL1s/adKdEZGzPFm_Z94PxebDxA/view?utm_content=DAEOE5_hL1s&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-- 5 min presentation
-
-
