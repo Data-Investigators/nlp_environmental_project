@@ -63,7 +63,7 @@ For this project, you will be scraping data from GitHub repository README files.
 ## GOALS:
 Can we predict what language is being used based on the README.md documentation
 
-## MVP Questions to answer:
+## MVP Questions to Answer:
 - Where will the data come from?
     - GitHub repos with 'environmental' in search, sorted by Best Match
 - What languages will we focus on?
@@ -81,3 +81,9 @@ Is the dataset balanced?
 ## Delivery
 - [Final jupyter notebook](https://github.com/Data-Investigators/nlp_environmental_project/blob/main/final.ipynb)
 - [Presentation link](https://www.canva.com/design/DAEOE5_hL1s/adKdEZGzPFm_Z94PxebDxA/view?utm_content=DAEOE5_hL1s&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+
+## How to Reproduce
+- Fork or clone this repository
+- Read this readme.md file
+- Environmental repositories found in ```readmes2.json```
+- Run through the final.ipynb to see project results
