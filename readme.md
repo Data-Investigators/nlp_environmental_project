@@ -86,4 +86,5 @@ Is the dataset balanced?
 - Fork or clone this repository
 - Read this readme.md file
 - Environmental repositories found in ```readmes2.json```
+- Download ```acquire_ry```, ```ry_prepare```, ```explore.py```, ```ry_wrangle```, and ```model.py``` to use in analysis
 - Run through the final.ipynb to see project results
